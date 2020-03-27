@@ -126,7 +126,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_F9,		tagall,		{.v = "9"} },
 
 	/* 'shiftview' shortcuts */
-	{ MODKEY,			XK_Page_Up,	shiftview,	{.i = -1} },
+	{ MODKEY,			XK_Page_Up,	shiftview,	{.i = 1} },
 	{ MODKEY,			XK_Page_Down,	shiftview,	{.i = -1} },
 
 	{ 0, XF86XK_AudioMute, spawn, SHCMD("amixer sset Master toggle")},
