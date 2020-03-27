@@ -37,6 +37,7 @@ static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
 #include "tcl.c"
+#include "gaplessgrid.c"
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -44,6 +45,7 @@ static const Layout layouts[] = {
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 	{ "|||",      tcl },
+	{ "###",      gaplessgrid },
 };
 
 /*   Display modes of the tab bar: never shown, always shown, shown only in  */
@@ -90,6 +92,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ShiftMask,		XK_t,      setlayout,      {.v = &layouts[3]} },
+	{ MODKEY,			XK_g,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
