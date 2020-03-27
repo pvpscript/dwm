@@ -32,12 +32,12 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
+#include "tcl.c"
+#include "gaplessgrid.c"
+
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
-
-#include "tcl.c"
-#include "gaplessgrid.c"
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -72,6 +72,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 
 #include <X11/XF86keysym.h>
+#include "tagall.c"
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -111,6 +112,16 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+
+	{ MODKEY|ShiftMask,		XK_F1,	   tagall,	   {.v = "1"} },
+	{ MODKEY|ShiftMask,		XK_F2,	   tagall,	   {.v = "2"} },
+	{ MODKEY|ShiftMask,		XK_F3,	   tagall,	   {.v = "3"} },
+	{ MODKEY|ShiftMask,		XK_F4,	   tagall,	   {.v = "4"} },
+	{ MODKEY|ShiftMask,		XK_F5,	   tagall,	   {.v = "5"} },
+	{ MODKEY|ShiftMask,		XK_F6,	   tagall,	   {.v = "6"} },
+	{ MODKEY|ShiftMask,		XK_F7,	   tagall,	   {.v = "7"} },
+	{ MODKEY|ShiftMask,		XK_F8,	   tagall,	   {.v = "8"} },
+	{ MODKEY|ShiftMask,		XK_F9,	   tagall,	   {.v = "9"} },
 
 	{ 0, XF86XK_AudioMute, spawn, SHCMD("amixer sset Master toggle")},
 	{ 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("amixer sset Master 5%+")},
