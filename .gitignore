@@ -29,6 +29,7 @@
 *.dylib
 
 # Executables
+dwm
 *.exe
 *.out
 *.app
