@@ -14,5 +14,6 @@ This build contains the following patches:
   * [movestack](https://dwm.suckless.org/patches/movestack/)
   * [resizecorners](https://dwm.suckless.org/patches/resizecorners/)
   * [maximize](https://dwm.suckless.org/patches/maximize/)
+  * [save\_floats](https://dwm.suckless.org/patches/save_floats/)
 
 Including some changes in the config file.
