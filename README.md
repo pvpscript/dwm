@@ -11,5 +11,6 @@ This build contains the following patches:
   * [shiftview](https://lists.suckless.org/dev/1104/7590.html)
   * [vanitygaps](https://dwm.suckless.org/patches/vanitygaps/)
   * [centeredmaster](https://dwm.suckless.org/patches/centeredmaster/)
+  * [movestack](https://dwm.suckless.org/patches/movestack/)
 
 Including some changes in the config file.
