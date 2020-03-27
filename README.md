@@ -5,5 +5,7 @@ Original: [dwm](https://dwm.suckless.org/)
 This build contains the following patches:
   * [pertag](https://dwm.suckless.org/patches/pertag/)
   * [tab](https://dwm.suckless.org/patches/tab/)
+  * [tcl](https://dwm.suckless.org/patches/three-column/)
+  * [gaplessgrid](https://dwm.suckless.org/patches/gaplessgrid/)
 
 Including some changes in the config file.
