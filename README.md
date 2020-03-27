@@ -10,5 +10,6 @@ This build contains the following patches:
   * [tagall](https://dwm.suckless.org/patches/tagall/)
   * [shiftview](https://lists.suckless.org/dev/1104/7590.html)
   * [vanitygaps](https://dwm.suckless.org/patches/vanitygaps/)
+  * [centeredmaster](https://dwm.suckless.org/patches/centeredmaster/)
 
 Including some changes in the config file.
