@@ -56,7 +56,7 @@ static const int showtab            = showtab_auto; /* Default tab bar show mode
 static const Bool toptab            = True;         /* False means bottom tab bar */
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
