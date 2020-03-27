@@ -84,6 +84,7 @@ static const char *termcmd[]  = { "st", NULL };
 #include "tagall.c"
 #include "shiftview.c"
 #include "movestack.c"
+#include "maximize.c"
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -160,6 +161,13 @@ static Key keys[] = {
 	{ MODKEY|Mod4Mask,              XK_o,      incrohgaps,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_y,      incrovgaps,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_o,      incrovgaps,     {.i = -1 } },
+
+	/* 'maximize' shortcuts */
+	{ MODKEY|ControlMask|ShiftMask, XK_h,           togglehorizontalmax, NULL },
+	{ MODKEY|ControlMask|ShiftMask, XK_l,           togglehorizontalmax, NULL },
+	{ MODKEY|ControlMask|ShiftMask, XK_j,           toggleverticalmax,   NULL },
+	{ MODKEY|ControlMask|ShiftMask, XK_k,           toggleverticalmax,   NULL },
+	{ MODKEY|ControlMask,           XK_m,           togglemaximize,      {0} },
 
 	{ 0, XF86XK_AudioMute, spawn, SHCMD("amixer sset Master toggle")},
 	{ 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("amixer sset Master 5%+")},

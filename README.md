@@ -13,5 +13,6 @@ This build contains the following patches:
   * [centeredmaster](https://dwm.suckless.org/patches/centeredmaster/)
   * [movestack](https://dwm.suckless.org/patches/movestack/)
   * [resizecorners](https://dwm.suckless.org/patches/resizecorners/)
+  * [maximize](https://dwm.suckless.org/patches/maximize/)
 
 Including some changes in the config file.
