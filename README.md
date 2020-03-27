@@ -3,6 +3,6 @@
 Original: [dwm](https://dwm.suckless.org/)
 
 This build contains the following patches:
-  * patch
+  * [pertag](https://dwm.suckless.org/patches/pertag/)
 
 Including some changes in the config file.
