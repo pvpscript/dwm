@@ -12,5 +12,6 @@ This build contains the following patches:
   * [vanitygaps](https://dwm.suckless.org/patches/vanitygaps/)
   * [centeredmaster](https://dwm.suckless.org/patches/centeredmaster/)
   * [movestack](https://dwm.suckless.org/patches/movestack/)
+  * [resizecorners](https://dwm.suckless.org/patches/resizecorners/)
 
 Including some changes in the config file.
