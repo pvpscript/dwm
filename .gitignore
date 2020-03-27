@@ -53,4 +53,5 @@ Mkfile.old
 dkms.conf
 
 # Patches
-patches/
+*.diff
+*.rej
