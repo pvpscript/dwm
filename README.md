@@ -1,4 +1,4 @@
-# My build for the Dinamic Window Manager (dwm)
+# My build for the Dynamic Window Manager (dwm)
 
 Original: [dwm](https://dwm.suckless.org/)
 
