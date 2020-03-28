@@ -163,17 +163,17 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_o,      incrovgaps,     {.i = -1 } },
 
 	/* 'maximize' shortcuts */
-	{ MODKEY|ControlMask|ShiftMask, XK_h,           togglehorizontalmax, NULL },
-	{ MODKEY|ControlMask|ShiftMask, XK_l,           togglehorizontalmax, NULL },
-	{ MODKEY|ControlMask|ShiftMask, XK_j,           toggleverticalmax,   NULL },
-	{ MODKEY|ControlMask|ShiftMask, XK_k,           toggleverticalmax,   NULL },
+	{ MODKEY|ControlMask|ShiftMask, XK_h,           togglehorizontalmax, {0} },
+	{ MODKEY|ControlMask|ShiftMask, XK_l,           togglehorizontalmax, {0} },
+	{ MODKEY|ControlMask|ShiftMask, XK_j,           toggleverticalmax,   {0} },
+	{ MODKEY|ControlMask|ShiftMask, XK_k,           toggleverticalmax,   {0} },
 	{ MODKEY|ControlMask,           XK_m,           togglemaximize,      {0} },
 
-	{ 0, XF86XK_AudioMute,			spawn, 		SHCMD("amixer sset Master toggle")},
-	{ 0, XF86XK_AudioRaiseVolume, 		spawn, 		SHCMD("amixer sset Master 5%+")},
-	{ 0, XF86XK_AudioLowerVolume, 		spawn, 		SHCMD("amixer sset Master 5%-")},
-	{ 0, XF86XK_XF86MonBrightnessUp, 	spawn, 		SHCMD("light -A 5")},
-	{ 0, XF86XK_XF86MonBrightnessDown, 	spawn, 		SHCMD("light -U 5")},
+	{ 0, XF86XK_AudioMute,		spawn, 		SHCMD("amixer sset Master toggle")},
+	{ 0, XF86XK_AudioRaiseVolume, 	spawn, 		SHCMD("amixer sset Master 5%+")},
+	{ 0, XF86XK_AudioLowerVolume, 	spawn, 		SHCMD("amixer sset Master 5%-")},
+	{ 0, XF86XK_MonBrightnessUp, 	spawn, 		SHCMD("light -A 5")},
+	{ 0, XF86XK_MonBrightnessDown, 	spawn, 		SHCMD("light -U 5")},
 };
 
 /* button definitions */
