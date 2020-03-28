@@ -92,8 +92,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,			XK_w,	   tabmode,	   {-1} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+	{ MODKEY,                       XK_j,      focusstack,     {.i = -1 } },
+	{ MODKEY,                       XK_k,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
@@ -169,9 +169,11 @@ static Key keys[] = {
 	{ MODKEY|ControlMask|ShiftMask, XK_k,           toggleverticalmax,   NULL },
 	{ MODKEY|ControlMask,           XK_m,           togglemaximize,      {0} },
 
-	{ 0, XF86XK_AudioMute, spawn, SHCMD("amixer sset Master toggle")},
-	{ 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("amixer sset Master 5%+")},
-	{ 0, XF86XK_AudioLowerVolume, spawn, SHCMD("amixer sset Master 5%-")},
+	{ 0, XF86XK_AudioMute,			spawn, 		SHCMD("amixer sset Master toggle")},
+	{ 0, XF86XK_AudioRaiseVolume, 		spawn, 		SHCMD("amixer sset Master 5%+")},
+	{ 0, XF86XK_AudioLowerVolume, 		spawn, 		SHCMD("amixer sset Master 5%-")},
+	{ 0, XF86XK_XF86MonBrightnessUp, 	spawn, 		SHCMD("light -A 5")},
+	{ 0, XF86XK_XF86MonBrightnessDown, 	spawn, 		SHCMD("light -U 5")},
 };
 
 /* button definitions */
