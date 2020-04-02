@@ -185,6 +185,8 @@ static Key keys[] = {
 	{ 0, XF86XK_AudioLowerVolume, 	spawn, 		SHCMD("amixer sset Master 5%- ; pkill -RTMIN+11 dwmblocks")},
 	{ 0, XF86XK_MonBrightnessUp, 	spawn, 		SHCMD("light -A 5 ; pkill -RTMIN+10 dwmblocks")},
 	{ 0, XF86XK_MonBrightnessDown, 	spawn, 		SHCMD("light -U 5 ; pkill -RTMIN+10 dwmblocks")},
+
+	{ 0, XK_Caps_Lock, 		spawn, 		SHCMD("pkill -RTMIN+9 dwmblocks")},
 };
 
 /* button definitions */
