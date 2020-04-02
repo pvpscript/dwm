@@ -16,6 +16,7 @@ static const char *fonts[]          = {
 	"Hack Nerd Font:pixelsize=14:autohint=true:antialias=true"
 	"OverpassMono Nerd Font:pixelsize=14:autohint=true:antialias=true"
 	"monospace:pixelsize=12:autohint=true:antialias=true",
+	"JoyPixels:pixelsize=10:autohint=true:antialias=true",
 };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
