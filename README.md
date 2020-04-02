@@ -15,5 +15,6 @@ This build contains the following patches:
   * [resizecorners](https://dwm.suckless.org/patches/resizecorners/)
   * [maximize](https://dwm.suckless.org/patches/maximize/)
   * [save\_floats](https://dwm.suckless.org/patches/save_floats/)
+  * [statuscolors](https://dwm.suckless.org/patches/statuscolors/)
 
 Including some changes in the config file.
