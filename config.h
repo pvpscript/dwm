@@ -29,26 +29,28 @@ static const char col_red[]         = "#ff0000";
 static const char col_yellow[]      = "#ffff00";
 static const char col_white[]       = "#ffffff";
 
-static const char norm_fg[] = "#dbdcd1";
-static const char norm_bg[] = "#0c1220";
-static const char norm_border[] = "#999a92";
+static const char norm_fg[] = "#e6e6e7";
+static const char norm_bg[] = "#0a0b0a";
+static const char norm_border[] = "#a1a1a1";
 
-static const char sel_fg[] = "#dbdcd1";
-static const char sel_bg[] = "#A0B19C";
-static const char sel_border[] = "#dbdcd1";
+static const char sel_fg[] = "#e6e6e7";
+static const char sel_bg[] = "#979EA7";
+static const char sel_border[] = "#e6e6e7";
 
-static const char urg_fg[] = "#dbdcd1";
-static const char urg_bg[] = "#70A9A7";
-static const char urg_border[] = "#70A9A7";
+static const char urg_fg[] = "#e6e6e7";
+static const char urg_bg[] = "#8C8F92";
+static const char urg_border[] = "#8C8F92";
 
 static const char *colors[][3]      = {
 	/*               fg           bg         border                         */
 	[SchemeNorm] = { norm_fg,     norm_bg,   norm_border }, // unfocused wins
 	[SchemeSel]  = { sel_fg,      sel_bg,    sel_border },  // the focused win
-	[SchemeUrg] =  { urg_fg,      urg_bg,    urg_border },
+	[SchemeWarn] =  { urg_fg,      urg_bg,    urg_border },
+	[SchemeUrgent] = { col_white, col_red,    col_red },
 };
 
 
+/* Default dwm colors */
 // static const char *colors[][3]      = {
 // 	/*               fg         bg         border   */
 // 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -109,7 +111,11 @@ static const Bool toptab            = True;         /* False means bottom tab ba
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+
+/* Default dmenu command */
+ /* static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL }; */
+
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", norm_bg, "-nf", norm_fg, "-sb", sel_bg, "-sf", sel_fg, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 #include <X11/XF86keysym.h>
