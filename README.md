@@ -16,5 +16,6 @@ This build contains the following patches:
   * [maximize](https://dwm.suckless.org/patches/maximize/)
   * [save\_floats](https://dwm.suckless.org/patches/save_floats/)
   * [statuscolors](https://dwm.suckless.org/patches/statuscolors/)
+  * [dwmc](https://dwm.suckless.org/patches/dwmc/)
 
 Including some changes in the config file.
