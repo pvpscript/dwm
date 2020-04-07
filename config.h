@@ -25,12 +25,12 @@ static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#eeeeee";
 static char selbordercolor[]        = "#005577";
 static char selbgcolor[]            = "#005577";
-static const char col_black[]       = "#000000";
-static const char col_red[]         = "#ff0000";
-static const char col_yellow[]      = "#ffff00";
-static const char col_white[]       = "#ffffff";
+static char col_black[]       = "#000000";
+static char col_red[]         = "#ff0000";
+static char col_yellow[]      = "#ffff00";
+static char col_white[]       = "#ffffff";
 
-static const char *colors[][3]      = {
+static char *colors[][3]      = {
 	/*               fg           bg           border                         */
 	[SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor }, // unfocused wins
 	[SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },  // the focused win
