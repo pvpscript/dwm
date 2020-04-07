@@ -17,5 +17,6 @@ This build contains the following patches:
   * [save\_floats](https://dwm.suckless.org/patches/save_floats/)
   * [statuscolors](https://dwm.suckless.org/patches/statuscolors/)
   * [dwmc](https://dwm.suckless.org/patches/dwmc/)
+  * [xrdb](https://dwm.suckless.org/patches/xrdb/)
 
 Including some changes in the config file.

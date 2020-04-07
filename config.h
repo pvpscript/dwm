@@ -19,34 +19,23 @@ static const char *fonts[]          = {
 	"JoyPixels:pixelsize=10:autohint=true:antialias=true",
 };
 static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static char normbgcolor[]           = "#222222";
+static char normbordercolor[]       = "#444444";
+static char normfgcolor[]           = "#bbbbbb";
+static char selfgcolor[]            = "#eeeeee";
+static char selbordercolor[]        = "#005577";
+static char selbgcolor[]            = "#005577";
 static const char col_black[]       = "#000000";
 static const char col_red[]         = "#ff0000";
 static const char col_yellow[]      = "#ffff00";
 static const char col_white[]       = "#ffffff";
 
-static const char norm_fg[] = "#e6e6e7";
-static const char norm_bg[] = "#0a0b0a";
-static const char norm_border[] = "#a1a1a1";
-
-static const char sel_fg[] = "#e6e6e7";
-static const char sel_bg[] = "#979EA7";
-static const char sel_border[] = "#e6e6e7";
-
-static const char urg_fg[] = "#e6e6e7";
-static const char urg_bg[] = "#8C8F92";
-static const char urg_border[] = "#8C8F92";
-
 static const char *colors[][3]      = {
-	/*               fg           bg         border                         */
-	[SchemeNorm] = { norm_fg,     norm_bg,   norm_border }, // unfocused wins
-	[SchemeSel]  = { sel_fg,      sel_bg,    sel_border },  // the focused win
-	[SchemeWarn] =  { urg_fg,      urg_bg,    urg_border },
-	[SchemeUrgent] = { col_white, col_red,    col_red },
+	/*               fg           bg           border                         */
+	[SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor }, // unfocused wins
+	[SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },  // the focused win
+	[SchemeWarn] =  { col_black,  col_yellow,  col_red },
+	[SchemeUrgent] = { col_white, col_red,     col_red },
 };
 
 
@@ -113,9 +102,7 @@ static const Bool toptab            = True;         /* False means bottom tab ba
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 
 /* Default dmenu command */
- /* static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL }; */
-
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", norm_bg, "-nf", norm_fg, "-sb", sel_bg, "-sf", sel_fg, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 #include <X11/XF86keysym.h>
@@ -234,3 +221,67 @@ static Button buttons[] = {
 	{ ClkTabBar, 		0,		Button1,	focuswin,	{0} },
 };
 
+void
+setlayoutex(const Arg *arg)
+{
+	setlayout(&((Arg) { .v = &layouts[arg->i] }));
+}
+
+void
+viewex(const Arg *arg)
+{
+	view(&((Arg) { .ui = 1 << arg->ui }));
+}
+
+void
+viewall(const Arg *arg)
+{
+	view(&((Arg){.ui = ~0}));
+}
+
+void
+toggleviewex(const Arg *arg)
+{
+	toggleview(&((Arg) { .ui = 1 << arg->ui }));
+}
+
+void
+tagex(const Arg *arg)
+{
+	tag(&((Arg) { .ui = 1 << arg->ui }));
+}
+
+void
+toggletagex(const Arg *arg)
+{
+	toggletag(&((Arg) { .ui = 1 << arg->ui }));
+}
+
+/* signal definitions */
+/* signum must be greater than 0 */
+/* trigger signals using `xsetroot -name "fsignal:<signame> [<type> <value>]"` */
+static Signal signals[] = {
+	/* signum           function */
+	{ "focusstack",     focusstack },
+	{ "setmfact",       setmfact },
+	{ "togglebar",      togglebar },
+	{ "incnmaster",     incnmaster },
+	{ "togglefloating", togglefloating },
+	{ "focusmon",       focusmon },
+	{ "tagmon",         tagmon },
+	{ "zoom",           zoom },
+	{ "view",           view },
+	{ "viewall",        viewall },
+	{ "viewex",         viewex },
+	{ "toggleview",     view },
+	{ "toggleviewex",   toggleviewex },
+	{ "tag",            tag },
+	{ "tagall",         tagall },
+	{ "tagex",          tagex },
+	{ "toggletag",      tag },
+	{ "toggletagex",    toggletagex },
+	{ "killclient",     killclient },
+	{ "quit",           quit },
+	{ "setlayout",      setlayout },
+	{ "setlayoutex",    setlayoutex },
+};
