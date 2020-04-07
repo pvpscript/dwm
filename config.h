@@ -194,13 +194,25 @@ static Key keys[] = {
 	{ MODKEY|ControlMask|ShiftMask, XK_k,           toggleverticalmax,   {0} },
 	{ MODKEY|ControlMask,           XK_m,           togglemaximize,      {0} },
 
+	{ 0, XK_Caps_Lock, 		spawn, 		SHCMD("pkill -RTMIN+9 dwmblocks")},
+
+	/* XF86 keys config */
+	/* Audio shortcuts */
 	{ 0, XF86XK_AudioMute,		spawn, 		SHCMD("amixer sset Master toggle ; pkill -RTMIN+11 dwmblocks")},
 	{ 0, XF86XK_AudioRaiseVolume, 	spawn, 		SHCMD("amixer sset Master 5%+ ; pkill -RTMIN+11 dwmblocks")},
 	{ 0, XF86XK_AudioLowerVolume, 	spawn, 		SHCMD("amixer sset Master 5%- ; pkill -RTMIN+11 dwmblocks")},
+	{ 0, XF86XK_AudioPrev,		spawn,		SHCMD("mpc prev") },
+	{ 0, XF86XK_AudioNext,		spawn,		SHCMD("mpc next") },
+	{ 0, XF86XK_AudioPause,		spawn,		SHCMD("mpc pause") },
+	{ 0, XF86XK_AudioPlay,		spawn,		SHCMD("mpc play") },
+	{ 0, XF86XK_AudioStop,		spawn,		SHCMD("mpc stop") },
+	{ 0, XF86XK_AudioRewind,	spawn,		SHCMD("mpc seek -10") },
+	{ 0, XF86XK_AudioForward,	spawn,		SHCMD("mpc seek +10") },
+	{ 0, XF86XK_AudioMedia,		spawn,		SHCMD("st -e ncmpcpp") },
+
+	/* Brightness shortcuts */
 	{ 0, XF86XK_MonBrightnessUp, 	spawn, 		SHCMD("light -A 5 ; pkill -RTMIN+10 dwmblocks")},
 	{ 0, XF86XK_MonBrightnessDown, 	spawn, 		SHCMD("light -U 5 ; pkill -RTMIN+10 dwmblocks")},
-
-	{ 0, XK_Caps_Lock, 		spawn, 		SHCMD("pkill -RTMIN+9 dwmblocks")},
 };
 
 /* button definitions */
